@@ -1,0 +1,46 @@
+$margins: 10, 20, 30, 40, 50, 60, 70, 80
+
+@each $margin in $margins
+    .mt-#{$margin}
+        margin-top: #{$margin}px
+    
+    .mr-#{$margin}
+        margin-right: #{$margin}px
+    
+    .ml-#{$margin}
+        margin-left: #{$margin}px
+    
+    .mb-#{$margin}
+        margin-bottom: #{$margin}px
+    
+.el-form-item__label 
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 12px
+
+.el-form.el-form--label-top
+    .el-form-item__label 
+        padding: 0 !important
+
+    .el-form-item 
+        margin-bottom: 0 !important
+
+.el-upload, .el-upload-dragger
+    width: 100%
+
+.el-dialog__body
+    padding-top: 0
+
+.reorder
+    cursor: move
+
+.slide-enter-active, .slide-leave-active 
+    transition: all .3s
+
+.slide-enter-to, .slide-leave 
+    transform: translateX(0)
+    opacity: 1
+
+.slide-enter, .slide-leave-to 
+    transform: translateY(10px)
+    opacity: 0

@@ -1,0 +1,24 @@
+version: "3"
+
+networks:
+  web:
+    external: true
+
+services:
+  admin:
+    build: .
+    image: chatavenue/admin
+    container_name: admin
+    command: npm run start
+    restart: unless-stopped
+    volumes:
+      - /home/app/node_modules
+      - .:/home/app/
+      - dist:/storage/
+    networks:
+      - web
+    environment:
+      - HOST=admin
+      - PORT=3000
+volumes:
+  dist:
